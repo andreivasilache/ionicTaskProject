@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Task</ion-title>
+
+    <ion-buttons slot="end" (click)="submitForm(false)">
+      <ion-text>
+        <span class="saveBtn">Save</span>
+      </ion-text>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-form [IsEditMode]="false"></app-form>
+</ion-content>

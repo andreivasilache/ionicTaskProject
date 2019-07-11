@@ -11,10 +11,8 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+  { path: 'add-task', loadChildren: './add-task/add-task.module#AddTaskPageModule' },
+  { path: 'edit-task', loadChildren: './edit-task/edit-task.module#EditTaskPageModule' }
 ];
 
 @NgModule({
@@ -23,4 +21,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
