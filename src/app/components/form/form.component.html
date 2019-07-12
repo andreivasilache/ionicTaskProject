@@ -1,4 +1,4 @@
-<form #formData="ngForm" (ngSubmit)="submitForm(formData.value,IsEditMode)">
+<form #formData="ngForm" (ngSubmit)="submitForm(IsEditMode)">
   <div padding class="ion-margin-top">
 
     <ion-item>
@@ -6,15 +6,13 @@
       <ion-input name="text" [(ngModel)]="text" placeholder="Input text"></ion-input>
     </ion-item>
 
-
     <ion-grid class="ion-margin-top" padding>
       <ion-row>
         <ion-col>
           <span class="display-inline">
             <p class="chip-description">FROM </p>
             <ion-chip>
-              <ion-datetime displayFormat="MM/DD/YYYY" value="10/05/2018" class="date-time" name="startTime"
-                [(ngModel)]="startTime">
+              <ion-datetime displayFormat="MM/DD/YYYY" class="date-time" name="startTime" [(ngModel)]="startTime">
               </ion-datetime>
             </ion-chip>
           </span>
@@ -23,16 +21,13 @@
           <span class="display-inline">
             <p class="chip-description">TO </p>
             <ion-chip>
-              <ion-datetime displayFormat="MM/DD/YYYY" value="10/05/2018" class="date-time" name="endTime"
-                [(ngModel)]="endTimeDate">
+              <ion-datetime displayFormat="MM/DD/YYYY" class="date-time" name="endTime" [(ngModel)]="endTimeDate">
               </ion-datetime>
             </ion-chip>
           </span>
         </ion-col>
       </ion-row>
     </ion-grid>
-
-
 
     <ion-item>
       <ion-label position="stacked">Points</ion-label>

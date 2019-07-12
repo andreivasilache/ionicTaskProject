@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SQLdbService } from 'src/app/services/database/sqldb.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -20,13 +22,15 @@ export class FormComponent implements OnInit {
   @Input() DateEnd: string;
   @Input() Points: string;
 
-  constructor() { }
+  constructor(public sqlDB: SQLdbService, private router: Router) { }
 
   ngOnInit() { }
 
   submitForm(isInEditMode) {
     if (!isInEditMode) {
-      console.log(this.text, this.startTime, this.endTimeDate, this.points)
+      this.sqlDB.addTask(this.text, this.startTime, this.endTimeDate, this.points).then(() => {
+        this.router.navigate(['home/allTasks']);
+      })
     }
   }
 

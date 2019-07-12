@@ -1,5 +1,7 @@
 {
   "name": "CalendMe",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
