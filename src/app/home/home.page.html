@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-buttons slot="end" class="addTaskBtn" (click)="redirectToAddTask()">
+    <ion-buttons slot="end" class="addTaskBtn" (click)="redirectTo('/add-task')">
       <ion-icon name="add-circle" class="ion-float-right addIcon"></ion-icon>
     </ion-buttons>
 
@@ -18,7 +18,7 @@
 <ion-content>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="allTasks">
+      <ion-tab-button tab="">
         <ion-icon name="list"></ion-icon>
         <ion-label>All</ion-label>
       </ion-tab-button>

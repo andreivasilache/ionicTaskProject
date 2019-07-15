@@ -10,8 +10,8 @@ export class HomePage {
 
   constructor(private router: Router) { }
 
-  redirectToAddTask() {
-    this.router.navigate(['/add-task'])
+  redirectTo(route) {
+    this.router.navigate([route])
   }
 
 }

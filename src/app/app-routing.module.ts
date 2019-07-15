@@ -14,10 +14,9 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePage,
-
     children: [
       {
-        path: 'allTasks',
+        path: '',
         component: AllTasksComponent
       },
       {
@@ -27,11 +26,14 @@ const routes: Routes = [
       {
         path: 'calendar',
         component: CalendarComponent
+      }, {
+        path: "**",
+        component: AllTasksComponent
       }
     ]
   },
   { path: 'add-task', loadChildren: './add-task/add-task.module#AddTaskPageModule' },
-  { path: 'edit-task', loadChildren: './edit-task/edit-task.module#EditTaskPageModule' }
+  { path: 'edit-task/:id', loadChildren: './edit-task/edit-task.module#EditTaskPageModule' }
 ];
 
 @NgModule({

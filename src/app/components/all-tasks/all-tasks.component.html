@@ -1,10 +1,70 @@
 <ion-list>
-  <ion-item no-lines *ngFor="let task of tasks">
-    <ion-checkbox slot="start" color="primary" (click)="editTask(task.id,task.completed)" [(ngModel)]="task.completed">
-    </ion-checkbox>
-    <ion-label class="removeLabelUnderline"> {{task.title}}</ion-label>
-    <ion-buttons (click)="deleteTask(task.id)">
-      <ion-icon slot="end" name="trash"></ion-icon>
-    </ion-buttons>
-  </ion-item>
+  <p class="ion-padding-start">Today</p>
+  <div *ngFor="let task of tasks">
+    <div *ngIf="isToday(task.startTime) && !task.completed">
+      <ion-grid padding>
+        <ion-row>
+          <ion-col size="2">
+            <ion-checkbox color="primary" (click)="toggleTaskStatus(task.id,task.completed)"
+              [(ngModel)]="task.completed">
+            </ion-checkbox>
+          </ion-col>
+          <ion-col size="8">
+            <ion-text [routerLink]="['/edit-task',task.id]">{{task.title}}</ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <ion-buttons (click)="deleteTask(task.id)">
+              <ion-icon slot="end" name="trash"></ion-icon>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <p class="ion-padding-start">Uncompleted</p>
+  <div *ngFor="let task of tasks">
+    <div *ngIf="!task.completed">
+      <ion-grid padding>
+        <ion-row>
+          <ion-col size="2">
+            <ion-checkbox color="primary" (click)="toggleTaskStatus(task.id,task.completed)"
+              [(ngModel)]="task.completed">
+            </ion-checkbox>
+          </ion-col>
+          <ion-col size="8">
+            <ion-text [routerLink]="['/edit-task',task.id]">{{task.title}}</ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <ion-buttons (click)="deleteTask(task.id)">
+              <ion-icon slot="end" name="trash"></ion-icon>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <p class="ion-padding-start">Completed</p>
+  <div *ngFor="let task of tasks">
+    <div lines="none" *ngIf="task.completed">
+      <ion-grid padding>
+        <ion-row>
+          <ion-col size="2">
+            <ion-checkbox color="primary" (click)="toggleTaskStatus(task.id,task.completed)"
+              [(ngModel)]="task.completed">
+            </ion-checkbox>
+          </ion-col>
+          <ion-col size="8">
+            <ion-text [routerLink]="['/edit-task',task.id]">{{task.title}}</ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <ion-buttons (click)="deleteTask(task.id)">
+              <ion-icon slot="end" name="trash"></ion-icon>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-list>

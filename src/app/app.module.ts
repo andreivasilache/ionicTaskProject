@@ -26,7 +26,7 @@ import { HomePage } from './home/home.page';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     StatusBar,

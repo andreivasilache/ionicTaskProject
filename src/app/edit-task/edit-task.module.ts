@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { EditTaskPage } from './edit-task.page';
+import { FormComponent } from '../components/form/form.component';
 
 const routes: Routes = [
   {
@@ -23,4 +24,4 @@ const routes: Routes = [
   ],
   declarations: [EditTaskPage]
 })
-export class EditTaskPageModule {}
+export class EditTaskPageModule { }

@@ -1,0 +1,27 @@
+ion-chip {
+    background: #01A39D;
+    color: white
+}
+
+ion-item {
+    --highlight-color-valid: #01A39D;
+}
+
+.chip-description {
+    margin: 12px 0px;
+    font-size: 14px;
+}
+
+.display-inline {
+    display: inline-flex
+}
+
+.date-time {
+    padding: 0 5px;
+}
+
+.saveBtn {
+    color: #01A39D;
+    font-size: 15px;
+    margin-right: 10px;
+}

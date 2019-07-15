@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-checkbox slot="start" color="primary" (click)="editTask(task.id,task.completed)" [(ngModel)]="task.completed">
+  </ion-checkbox>
+  <ion-label class="removeLabelUnderline"> {{task.title}}</ion-label>
+  <ion-buttons (click)="deleteTask(task.id)">
+    <ion-icon slot="end" name="trash"></ion-icon>
+  </ion-buttons>
+</ion-item>

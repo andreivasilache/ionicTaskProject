@@ -4,15 +4,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Platform } from '@ionic/angular';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { HttpClient } from '@angular/common/http';
+import { Task } from 'src/app/models/task';
 
-export interface Task {
-  id: number,
-  title: string,
-  startTime: string,
-  endTime: string,
-  points: number,
-  completed: boolean
-}
+
 
 @Injectable({
   providedIn: 'root'
@@ -82,9 +76,28 @@ export class SQLdbService {
     return this.tasks.asObservable();
   }
 
+  getTask(id: number): Promise<Task> {
+    return this.database.executeSql("SELECT * FROM tasks WHERE id= ?", [id]).then((data) => {
+      return {
+        id: data.rows.item(0).id,
+        title: data.rows.item(0).title,
+        startTime: data.rows.item(0).startTime,
+        endTime: data.rows.item(0).endTime,
+        completed: data.rows.item(0).completed,
+        points: data.rows.item(0).points,
+      }
+    })
+  }
+
   addTask(title, startTime, endTime, points) {
     let taskData = [title, startTime, endTime, points];
     return this.database.executeSql("INSERT INTO tasks (title,startTime,endTime,points,completed) VALUES (?,?,?,?,false)", taskData).then(data => {
+      this.loadTasks();
+    })
+  }
+
+  editTask(id, title, startTime, endTime, points) {
+    return this.database.executeSql("UPDATE tasks SET title = ?, startTime = ? , endTime = ?, points = ? WHERE id = ?", [title, startTime, endTime, points, id]).then((data) => {
       this.loadTasks();
     })
   }

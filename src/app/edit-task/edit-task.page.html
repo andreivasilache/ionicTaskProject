@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>edit-task</ion-title>
+    <ion-title>Edit Task</ion-title>
+    <ion-button slot="end" fill="clear">
+      <span class="saveBtn" (click)="saveEdits()">S<span class="ion-text-lowercase">ave</span></span>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <form #formData="ngForm" (ngSubmit)="submitForm(IsEditMode)">
+    <div padding class="ion-margin-top">
+      <ion-item>
+        <ion-label position="stacked">Text date</ion-label>
+        <ion-input name="text" [(ngModel)]="title" placeholder="Input text"></ion-input>
+      </ion-item>
+      <ion-grid class="ion-margin-top" padding>
+        <ion-row>
+          <ion-col>
+            <span class="display-inline">
+              <p class="chip-description">FROM </p>
+              <ion-chip>
+                <ion-datetime displayFormat="MM/DD/YYYY" class="date-time" name="startTime" [(ngModel)]="startTime">
+                </ion-datetime>
+              </ion-chip>
+            </span>
+          </ion-col>
+          <ion-col>
+            <span class="display-inline">
+              <p class="chip-description">TO </p>
+              <ion-chip>
+                <ion-datetime displayFormat="MM/DD/YYYY" class="date-time" name="endTime" [(ngModel)]="endTimeDate">
+                </ion-datetime>
+              </ion-chip>
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-item>
+        <ion-label position="stacked">Points</ion-label>
+        <ion-input name="points" [(ngModel)]="points" placeholder="Input text"></ion-input>
+      </ion-item>
+    </div>
+  </form>
 </ion-content>

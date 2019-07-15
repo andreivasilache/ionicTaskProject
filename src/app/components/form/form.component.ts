@@ -29,7 +29,7 @@ export class FormComponent implements OnInit {
   submitForm(isInEditMode) {
     if (!isInEditMode) {
       this.sqlDB.addTask(this.text, this.startTime, this.endTimeDate, this.points).then(() => {
-        this.router.navigate(['home/allTasks']);
+        this.router.navigate(['home/']);
       })
     }
   }

@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormGroupDirective } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormComponent } from '../components/form/form.component';
 
 @Component({
