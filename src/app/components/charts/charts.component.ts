@@ -64,27 +64,21 @@ export class ChartsComponent implements OnInit, OnDestroy {
 
   sortTaskByDate() {
     return this.taskData.sort((a, b) => {
-      // return <any>new Date(a.startTime) - <any>new Date(b.startTime);
       return <any>new Date(a.startTime) - <any>new Date(b.startTime);
     });
   }
 
   updateChartBetween() {
-    // this.deleteChartData();
-    // this.barChartLabels = [];
-
-    let startTimeDate = new Date(this.startTime);
-    let endTimeDate = new Date(this.endTime);
-
     let localDates = [];
-
     for (let index = 0; index < this.taskData.length; index++) {
       if ((new Date(this.taskData[index].startTime) > new Date(this.startTime)) && (new Date(this.taskData[index].endTime) < new Date(this.endTime))) {
         localDates.push(this.taskData[index].points);
       }
     }
+
     this.barChartData[0].data = [];
     this.barChartLabels = [];
+
     localDates.forEach((date) => {
       this.barChartData[0].data.push(date);
       this.barChartLabels.push(``);

@@ -17,6 +17,7 @@ import { ChartsComponent } from './components/charts/charts.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { HomePage } from './home/home.page';
 import { ChartsModule } from 'ng2-charts-x';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
   declarations: [AppComponent, AllTasksComponent, ChartsComponent, HomePage, CalendarComponent],
@@ -27,7 +28,8 @@ import { ChartsModule } from 'ng2-charts-x';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    NgCalendarModule,
   ],
   providers: [
     StatusBar,
