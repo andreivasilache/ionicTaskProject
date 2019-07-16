@@ -6,11 +6,10 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { HttpClient } from '@angular/common/http';
 import { Task } from 'src/app/models/task';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class SQLdbService {
 
   private database: SQLiteObject;
