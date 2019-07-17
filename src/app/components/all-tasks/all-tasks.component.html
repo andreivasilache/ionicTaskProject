@@ -1,7 +1,7 @@
 <ion-list>
   <p class="ion-padding-start">Today</p>
   <div *ngFor="let task of tasks">
-    <div *ngIf="isToday(task.startTime) && !task.completed">
+    <div *ngIf="isToday(task.startTime,task.endTime) && !task.completed">
       <ion-grid padding>
         <ion-row>
           <ion-col size="2">

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
 import { ChartsComponent } from './components/charts/charts.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarsComponent } from './components/calendar/calendar.component';
 import { HomePage } from './home/home.page';
 
 const routes: Routes = [
@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'calendar',
-        component: CalendarComponent
+        component: CalendarsComponent
       }, {
         path: "**",
         component: AllTasksComponent

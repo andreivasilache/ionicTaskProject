@@ -15,15 +15,23 @@ export class DateService {
     }
   }
 
-  checkTodayMatch(ISOtoBeChecked) {
-    let todayDate = new Date();
-    let todayDayAndMonth = this.getDayMonthAndYear(todayDate);
-    let dateToBeChecked = this.getDayMonthAndYear(ISOtoBeChecked);
+  checkTodayMatch(startISOInterval, endISOInterval) {
+    let now = new Date();
 
-    return todayDayAndMonth.day === dateToBeChecked.day
-      && todayDayAndMonth.month === dateToBeChecked.month
-      && todayDayAndMonth.year === dateToBeChecked.year;
+    for (let dateIterrator = new Date(startISOInterval); dateIterrator < new Date(endISOInterval); dateIterrator.setDate(dateIterrator.getDate() + 1)) {
+      if (new Date(now) == new Date(dateIterrator)) console.log("Yeaa");
+    }
+
+    // let todayDate = new Date();
+    // let todayDayAndMonth = this.getDayMonthAndYear(todayDate);
+    // let dateToBeChecked = this.getDayMonthAndYear(ISOtoBeChecked);
+
+    // return todayDayAndMonth.day === dateToBeChecked.day
+    //   && todayDayAndMonth.month === dateToBeChecked.month
+    //   && todayDayAndMonth.year === dateToBeChecked.year;
   }
+
+
 
 
   constructor() { }

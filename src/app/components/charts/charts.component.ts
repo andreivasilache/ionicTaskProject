@@ -38,11 +38,9 @@ export class ChartsComponent implements OnInit, OnDestroy {
     this.task$ = this.sqlDb.tasks.subscribe((data: Task[]) => {
       this.deleteChartData();
       this.taskData = data;
-      console.log(this.taskData);
       this.sortTaskByDate();
       this.populateChart();
       this.refreshChart();
-      console.log(this.taskData);
     })
     this.task$
   }
@@ -57,7 +55,8 @@ export class ChartsComponent implements OnInit, OnDestroy {
     this.barChartLabels = [];
     for (let index = 0; index < this.taskData.length; index++) {
       this.barChartLabels.push(``);
-      this.barChartData[0].data.push(Number(this.taskData[index].points));
+      // this.barChartData[0].data.push(Number(this.taskData[index].points));
+      (this.barChartData[0].data as (number | Chart.ChartPoint)[]).push(this.taskData[index].points);
     }
     this.isDataAvalabile = true;
   }
@@ -80,7 +79,7 @@ export class ChartsComponent implements OnInit, OnDestroy {
     this.barChartLabels = [];
 
     localDates.forEach((date) => {
-      this.barChartData[0].data.push(date);
+      (this.barChartData[0].data as (number | Chart.ChartPoint)[]).push(date);
       this.barChartLabels.push(``);
     })
 

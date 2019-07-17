@@ -14,13 +14,13 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { SQLite } from '@ionic-native/sqlite/ngx';
 import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
 import { ChartsComponent } from './components/charts/charts.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarsComponent } from './components/calendar/calendar.component';
 import { HomePage } from './home/home.page';
 import { ChartsModule } from 'ng2-charts-x';
 import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
-  declarations: [AppComponent, AllTasksComponent, ChartsComponent, HomePage, CalendarComponent],
+  declarations: [AppComponent, AllTasksComponent, ChartsComponent, HomePage, CalendarsComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

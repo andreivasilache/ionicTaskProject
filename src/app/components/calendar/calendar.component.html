@@ -1,5 +1,18 @@
-<!-- <calendar [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate"
-  (onCurrentDateChanged)="onCurrentDateChanged($event)" (onRangeChanged)="reloadSource(startTime, endTime)"
-  (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)"
-  (onTimeSelected)="onTimeSelected($event)" step="30">
-</calendar> -->
+<div padding>
+  <p>{{viewTitle}}</p>
+
+  <calendar #Calendar [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate"
+    (onRangeChanged)="reloadSource(startTime, endTime)" (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)" step="30">
+  </calendar>
+
+  <p *ngIf="selectedObject.title">
+    <ion-text color="primary">Title: {{selectedObject.title}}</ion-text>
+    <br>
+    <ion-text color="primary">
+      <span>{{selectedObject.startTime | date}} - </span>
+      <span>{{selectedObject.endTime | date}}</span>
+    </ion-text>
+
+  </p>
+</div>

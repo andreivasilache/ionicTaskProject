@@ -21,6 +21,7 @@ export class AllTasksComponent implements OnInit {
   constructor(public sqlDb: SQLdbService, public dateService: DateService) {
     this.sqlDb.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
+      console.log(tasks);
     })
   }
 
@@ -32,8 +33,8 @@ export class AllTasksComponent implements OnInit {
     this.sqlDb.toggleTaskStatus(currentStatus, id);
   }
 
-  isToday(ISOToBeChecked) {
-    return this.dateService.checkTodayMatch(ISOToBeChecked);
+  isToday(startISOInterval, endISOInterval) {
+    return this.dateService.checkTodayMatch(startISOInterval, endISOInterval);
   }
 
   redirectToTaskEdit(id) {
