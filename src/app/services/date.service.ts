@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,23 +17,28 @@ export class DateService {
   }
 
   checkTodayMatch(startISOInterval, endISOInterval) {
-    let now = new Date();
+    let start = +new Date(new Date(startISOInterval).setUTCHours(0, 0, 0, 0)); // set value to morning 00:01
+    let end = +new Date(new Date(endISOInterval).setUTCHours(24, 0, 0, 0)); // set value to evening 23:59
+    let now = +new Date();
 
-    for (let dateIterrator = new Date(startISOInterval); dateIterrator < new Date(endISOInterval); dateIterrator.setDate(dateIterrator.getDate() + 1)) {
-      if (new Date(now) == new Date(dateIterrator)) console.log("Yeaa");
-    }
-
-    // let todayDate = new Date();
-    // let todayDayAndMonth = this.getDayMonthAndYear(todayDate);
-    // let dateToBeChecked = this.getDayMonthAndYear(ISOtoBeChecked);
-
-    // return todayDayAndMonth.day === dateToBeChecked.day
-    //   && todayDayAndMonth.month === dateToBeChecked.month
-    //   && todayDayAndMonth.year === dateToBeChecked.year;
+    if ((now >= start) && (now <= end)) return true;
   }
 
+  checkThisWeekMatch(startWeekIso, endWeekIso) {
+    let now = moment();
+    let startIso = moment(startWeekIso);
+    let endIso = moment(endWeekIso);
 
+    return ((now.isoWeek() == startIso.isoWeek()) && (now.isoWeek() == endIso.isoWeek()))
+  }
 
+  checkThisMonthMatch(startWeekIso, endWeekIso) {
+    let now = moment();
+    let startIso = moment(startWeekIso);
+    let endIso = moment(endWeekIso);
+
+    return ((now.month() == startIso.month()) && (now.month() == endIso.month()))
+  }
 
   constructor() { }
 }

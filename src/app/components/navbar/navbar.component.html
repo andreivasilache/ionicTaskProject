@@ -1,0 +1,46 @@
+<ion-icon name="contact" class="navbar__profile"></ion-icon>
+<h1 class="navbar__title--header">Hello Dear User</h1>
+<div class="navbar__line--gray"></div>
+
+<h5 class="navbar__title--content">Today tasks</h5>
+
+<div *ngFor="let task of tasks">
+  <div *ngIf="isToday(task.startTime,task.endTime) ">
+    <span></span>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2">
+          <ion-checkbox color="primary" (click)="toggleTaskStatus(task.id,task.completed)" [(ngModel)]="task.completed">
+          </ion-checkbox>
+        </ion-col>
+        <ion-col size="8">
+          <ion-text [routerLink]="['/edit-task',task.id]">{{task.title}}</ion-text>
+        </ion-col>
+        <ion-col size="2">
+          <ion-buttons (click)="deleteTask(task.id)">
+            <ion-icon slot="end" name="trash"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+
+<div class="navbar__line--black"></div>
+
+<ion-grid padding>
+  <ion-row>
+    <ion-col size="4">
+      <h5 class="navbar__points--title">Today</h5>
+      <h5 class="navbar__points--title">+{{totalOfTodayPoints}}p</h5>
+    </ion-col>
+    <ion-col size="4">
+      <h5 class="navbar__points--title">This week</h5>
+      <h5 class="navbar__points--title">+{{totalOfThisWeekPoints}}p</h5>
+    </ion-col>
+    <ion-col size="4">
+      <h5 class="navbar__points--title">This month</h5>
+      <h5 class="navbar__points--title">+{{totalOfThisMonthPoints}}p</h5>
+    </ion-col>
+  </ion-row>
+</ion-grid>

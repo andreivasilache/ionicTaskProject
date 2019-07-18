@@ -7,7 +7,7 @@
         <span class="display-inline">
           <p class="chip-description">FROM </p>
           <ion-chip>
-            <ion-datetime (ionChange)="updateChartBetween()" displayFormat="MM/DD/YYYY" class="date-time"
+            <ion-datetime (ionChange)="updateChartBetween()" displayFormat="DD/MM/YYYY" class="date-time"
               name="startTime" [(ngModel)]="startTime">
             </ion-datetime>
           </ion-chip>
@@ -17,7 +17,7 @@
         <span class="display-inline">
           <p class="chip-description">TO </p>
           <ion-chip>
-            <ion-datetime (ionChange)="updateChartBetween()" displayFormat="MM/DD/YYYY" class="date-time" name="endTime"
+            <ion-datetime (ionChange)="updateChartBetween()" displayFormat="DD/MM/YYYY" class="date-time" name="endTime"
               [(ngModel)]="endTime">
             </ion-datetime>
           </ion-chip>

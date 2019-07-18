@@ -8,7 +8,7 @@ import { HomePage } from './home/home.page';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'home/allTasks',
     pathMatch: 'full'
   },
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
     component: HomePage,
     children: [
       {
-        path: '',
+        path: 'allTasks',
         component: AllTasksComponent
       },
       {

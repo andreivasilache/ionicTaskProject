@@ -3,7 +3,7 @@
 
   <calendar #Calendar [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate"
     (onRangeChanged)="reloadSource(startTime, endTime)" (onEventSelected)="onEventSelected($event)"
-    (onTitleChanged)="onViewTitleChanged($event)" step="30">
+    (onTitleChanged)="onViewTitleChanged($event)" step="30" [startingDayWeek]="1">
   </calendar>
 
   <p *ngIf="selectedObject.title">

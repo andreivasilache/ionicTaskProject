@@ -30,6 +30,7 @@
     "cordova-sqlite-storage": "^3.2.1",
     "core-js": "^2.5.4",
     "ionic2-calendar": "^0.5.2",
+    "moment": "^2.24.0",
     "ng2-charts": "^2.3.0",
     "ng2-charts-x": "^2.0.6",
     "rxjs": "~6.5.1",

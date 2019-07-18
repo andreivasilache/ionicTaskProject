@@ -21,7 +21,6 @@ export class AllTasksComponent implements OnInit {
   constructor(public sqlDb: SQLdbService, public dateService: DateService) {
     this.sqlDb.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
-      console.log(tasks);
     })
   }
 
