@@ -19,6 +19,7 @@ import { HomePage } from './home/home.page';
 import { ChartsModule } from 'ng2-charts-x';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FormModule } from './components/form/form.module';
 
 @NgModule({
   declarations: [AppComponent, AllTasksComponent, ChartsComponent, HomePage, CalendarsComponent, NavbarComponent],

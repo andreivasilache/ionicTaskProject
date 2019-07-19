@@ -6,7 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { EditTaskPage } from './edit-task.page';
-import { FormComponent } from '../components/form/form.component';
+import { FormModule } from '../components/form/form.module';
+
 
 const routes: Routes = [
   {
@@ -18,9 +19,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormModule
   ],
   declarations: [EditTaskPage]
 })

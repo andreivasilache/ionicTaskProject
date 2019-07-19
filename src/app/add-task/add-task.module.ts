@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { AddTaskPage } from './add-task.page';
 import { FormComponent } from '../components/form/form.component';
+import { FormModule } from '../components/form/form.module';
 
 const routes: Routes = [
   {
@@ -20,8 +21,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormModule
   ],
-  declarations: [AddTaskPage, FormComponent]
+  declarations: [AddTaskPage]
 })
 export class AddTaskPageModule { }

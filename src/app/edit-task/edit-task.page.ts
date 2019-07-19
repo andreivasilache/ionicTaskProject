@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SQLdbService } from '../services/database/sqldb.service';
 import { Task } from '../models/task';
+import { FormComponent } from '../components/form/form.component';
 
 @Component({
   selector: 'app-edit-task',
@@ -9,6 +10,8 @@ import { Task } from '../models/task';
   styleUrls: ['./edit-task.page.scss'],
 })
 export class EditTaskPage implements OnInit {
+  @ViewChild(FormComponent) formData: FormComponent;
+
   title: string;
   startTime: string;
   endTimeDate: string;
@@ -30,11 +33,7 @@ export class EditTaskPage implements OnInit {
     })
   }
   saveEdits() {
-    if (this.inited) {
-      this.sqlDb.editTask(this.id, this.title, this.startTime, this.endTimeDate, this.points).then((data) => {
-        this.router.navigate(['/'])
-      })
-    }
+    this.formData.submitForm();
   }
 
 

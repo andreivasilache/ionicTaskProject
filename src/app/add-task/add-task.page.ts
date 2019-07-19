@@ -16,8 +16,8 @@ export class AddTaskPage implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(isInEditMode) {
-    this.formData.submitForm(isInEditMode);
+  submitForm() {
+    this.formData.submitForm();
   }
 
 }

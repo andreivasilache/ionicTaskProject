@@ -96,6 +96,7 @@ export class SQLdbService {
   }
 
   editTask(id, title, startTime, endTime, points) {
+    console.log(id, title, startTime, endTime, points);
     return this.database.executeSql("UPDATE tasks SET title = ?, startTime = ? , endTime = ?, points = ? WHERE id = ?", [title, startTime, endTime, points, id]).then((data) => {
       this.loadTasks();
     })
