@@ -10,8 +10,8 @@ export class AddTaskPage implements OnInit {
 
   @ViewChild(FormComponent) formData: FormComponent;
 
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

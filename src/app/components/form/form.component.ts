@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SQLdbService } from 'src/app/services/database/sqldb.service';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-form',
@@ -8,7 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-
   text: string;
   startTime: string = new Date().toISOString();
   endTimeDate: string = new Date().toISOString();
@@ -42,14 +43,18 @@ export class FormComponent implements OnInit {
   ngOnInit() { }
 
   submitForm() {
-    if (!this.IsEditMode) {
-      this.sqlDB.addTask(this.text, this.startTime, this.endTimeDate, this.points).then(() => {
-        this.router.navigate(['home/']);
-      })
+    if ((this.text && this.points) && (moment(this.startTime).valueOf() <= moment(this.endTimeDate).valueOf())) {
+      if (!this.IsEditMode) {
+        this.sqlDB.addTask(this.text, this.startTime, this.endTimeDate, this.points).then(() => {
+          this.router.navigate(['home/']);
+        })
+      } else {
+        this.sqlDB.editTask(this.id, this.text, this.startTime, this.endTimeDate, this.points).then(() => {
+          this.router.navigate(['home/']);
+        })
+      }
     } else {
-      this.sqlDB.editTask(this.id, this.text, this.startTime, this.endTimeDate, this.points).then(() => {
-        this.router.navigate(['home/']);
-      })
+      alert("Invalid input values! Please check again!");
     }
   }
 
