@@ -26,15 +26,23 @@
     "@ionic-native/sqlite-porter": "^5.9.0",
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.1.0",
+    "@types/pouchdb": "^6.4.0",
     "cordova-android": "^8.0.0",
+    "cordova-plugin-sqlite-2": "^1.0.6",
     "cordova-sqlite-storage": "^3.2.1",
     "core-js": "^2.5.4",
+    "ionic-orm-3": "0.0.12",
     "ionic2-calendar": "^0.5.2",
     "moment": "^2.24.0",
     "ng2-charts": "^2.3.0",
     "ng2-charts-x": "^2.0.6",
+    "pouchdb": "^7.1.1",
+    "pouchdb-adapter-cordova-sqlite": "^2.0.6",
+    "pouchdb-find": "^7.1.1",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
+    "typeorm": "^0.2.18",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "^1.1.0",
     "zone.js": "~0.8.29"
   },
@@ -50,7 +58,7 @@
     "@ionic/angular-toolkit": "~1.5.1",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~12.0.0",
+    "@types/node": "^12.6.8",
     "codelyzer": "~4.5.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
@@ -82,7 +90,8 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-sqlite-storage": {},
-      "uk.co.workingedge.cordova.plugin.sqliteporter": {}
+      "uk.co.workingedge.cordova.plugin.sqliteporter": {},
+      "cordova-plugin-sqlite-2": {}
     },
     "platforms": [
       "android"

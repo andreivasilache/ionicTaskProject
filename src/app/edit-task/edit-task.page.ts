@@ -22,7 +22,7 @@ export class EditTaskPage implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private sqlDb: SQLdbService, public router: Router) {
     this.activatedRoute.params.subscribe((params) => {
-      this.sqlDb.getTask(+params.id).then((data: Task) => {
+      this.sqlDb.getTask(params.id).then((data: Task) => {
         this.title = data.title;
         this.startTime = data.startTime;
         this.endTimeDate = data.endTime;
