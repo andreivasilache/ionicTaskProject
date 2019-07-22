@@ -4,3 +4,37 @@
 // styles are for the entire app and not just one component. Additionally, this
 // file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
+
+
+.weekview-allday-table {
+    height: 400px !important;
+
+    .weekview-allday-content-wrapper {
+        height: 400px !important;
+
+        .calendar-cell {
+            height: 400px !important;
+        }
+    }
+
+    .weekview-allday-label {
+        height: 50px !important;
+    }
+}
+
+.table>tbody>tr>td.calendar-hour-column {
+    display: none;
+}
+
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td {
+    border: none !important;
+}
+
+.weekview-normal-event-container {
+    margin-top: 0px !important;
+}

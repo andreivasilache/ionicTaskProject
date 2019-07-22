@@ -1,3 +1,15 @@
-.weekview-allday-content-table .calendar-event {
+.weekview-allday-table {
     height: 100px !important;
+
+    .weekview-allday-content-wrapper {
+        height: 100px !important;
+
+        .calendar-cell {
+            height: 100px !important;
+        }
+    }
+
+    .weekview-allday-label {
+        height: 100px !important;
+    }
 }
